@@ -1,0 +1,39 @@
+name: Scheduled source collector
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: collector
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run collector
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: node automation/collector.js
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### Collector run finished" >> "$GITHUB_STEP_SUMMARY"
+          echo "See the 'Run collector' step log above for per-source results." >> "$GITHUB_STEP_SUMMARY"
+          echo "This workflow never publishes content directly — changes land as verification='NEW' rows awaiting editor review." >> "$GITHUB_STEP_SUMMARY"
