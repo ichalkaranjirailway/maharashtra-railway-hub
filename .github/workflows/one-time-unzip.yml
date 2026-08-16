@@ -13,13 +13,12 @@ jobs:
       - name: Unzip and move to repo root
         run: |
           unzip -o maharashtra-railway-hub.zip -d _extracted
-          shopt -s dotglob
-          mv _extracted/maharashtra-railway-hub/* .
+          cp -rf _extracted/maharashtra-railway-hub/. .
           rm -rf _extracted maharashtra-railway-hub.zip
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "One-time: extract project files from zip"
+          git commit -m "One-time: extract project files from zip" || echo "Nothing to commit"
           git push
