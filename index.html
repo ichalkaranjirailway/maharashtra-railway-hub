@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>महाराष्ट्र रेल्वे माहिती केंद्र — Maharashtra Railway Information Hub</title>
+<meta name="description" content="Maharashtra railway projects, updates, dashboard and the Hatkanangale–Ichalkaranji connectivity tracker — one archive, continuously updated.">
+<link rel="canonical" href="https://example.org/index.html">
+<meta property="og:title" content="Maharashtra Railway Information Hub">
+<meta property="og:description" content="Projects • Services • Updates • Documents • Evidence • History">
+<meta property="og:type" content="website">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<section class="hero">
+  <div class="container">
+    <h1 data-i18n="tagline"></h1>
+    <p class="subtitle" data-i18n="subtitle"></p>
+    <form class="hero-search" role="search" onsubmit="location.href='projects.html?q='+encodeURIComponent(this.q.value); return false;">
+      <label class="visually-hidden" for="heroSearch" data-i18n="navSearch"></label>
+      <input id="heroSearch" name="q" type="search" data-i18n-placeholder="searchPlaceholder" placeholder="Search projects, stations, districts…">
+      <button type="submit" data-i18n="navSearch">Search</button>
+    </form>
+  </div>
+</section>
+
+<div class="railline container" aria-hidden="true"></div>
+
+<main class="container">
+
+  <section class="section">
+    <div class="section-head">
+      <h2 data-i18n="liveUpdates"></h2>
+      <a class="link-more" href="today.html" data-i18n="viewAllProjects">See all</a>
+    </div>
+    <div class="card" id="updatesList"><!-- rendered by app.js --></div>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="dashboard"></h2>
+    <div class="grid grid-3" id="dashboardStats" style="grid-template-columns:repeat(6,1fr)"><!-- rendered --></div>
+  </section>
+
+  <section class="section" id="featuredProject"><!-- rendered by app.js --></section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2 data-i18n="viewAllProjects"></h2>
+      <a class="link-more" href="projects.html" data-i18n="viewAllProjects"></a>
+    </div>
+    <div class="card" id="projectListPreview"></div>
+  </section>
+
+</main>
+
+<div class="rail-divider container" aria-hidden="true"></div>
+
+<div id="site-footer"></div>
+
+<script src="data/data.js"></script>
+<script src="data/i18n.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  MRIH.renderHeader("home");
+  MRIH.renderFooter();
+  MRIH.renderDashboard();
+  window.__mrihUpdatesLimit = 6;
+  MRIH.renderUpdates(6);
+  MRIH.renderFeatured();
+  MRIH.renderProjectList("projectListPreview", {});
+  window.__mrihRerenderList = () => MRIH.renderProjectList("projectListPreview", {});
+  MRIH.__adjustGrid = document.getElementById("dashboardStats");
+  MRIH_I18N.renderI18n();
+</script>
+<style>
+  @media (max-width: 900px) { #dashboardStats { grid-template-columns: repeat(3,1fr) !important; } }
+  @media (max-width: 560px) { #dashboardStats { grid-template-columns: repeat(2,1fr) !important; } }
+</style>
+</body>
+</html>

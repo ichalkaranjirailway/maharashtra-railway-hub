@@ -1,0 +1,57 @@
+{
+  "_comment": "Add a new source by adding an object here — no code change needed. is_active controls whether the collector touches it. This file is the source of truth that gets synced into the `sources` table; edit here, not in the DB directly, so history stays in git.",
+  "sources": [
+    {
+      "key": "mor-pib",
+      "name": "Ministry of Railways — Press Releases (PIB)",
+      "authority": "Ministry of Railways",
+      "url": "https://pib.gov.in/PressReleseDetail.aspx",
+      "category": "official",
+      "source_type": "PRESS_RELEASE",
+      "priority": 1,
+      "update_frequency": "daily",
+      "fetch_strategy": "check_robots_then_html",
+      "is_active": false,
+      "notes": "PLACEHOLDER — verify the exact listing URL and confirm robots.txt permits automated fetch before activating."
+    },
+    {
+      "key": "cr-zone",
+      "name": "Central Railway — Official Website",
+      "authority": "Central Railway",
+      "url": "https://cr.indianrailways.gov.in/",
+      "category": "official",
+      "source_type": "OFFICIAL_WEBSITE",
+      "priority": 1,
+      "update_frequency": "weekly",
+      "fetch_strategy": "check_robots_then_html",
+      "is_active": false,
+      "notes": "PLACEHOLDER — confirm the specific project-status subpage URL before activating."
+    },
+    {
+      "key": "loksabha-qa",
+      "name": "Lok Sabha — Written Answers (eParlib / Sansad)",
+      "authority": "Parliament of India",
+      "url": "https://sansad.in/ls",
+      "category": "parliament",
+      "source_type": "PARLIAMENT_RECORD",
+      "priority": 2,
+      "update_frequency": "manual",
+      "fetch_strategy": "manual_only",
+      "is_active": false,
+      "notes": "Search interface, not a stable feed — treat as a manual-verification source per the brief's fallback rule, not an automated collector target."
+    },
+    {
+      "key": "rti-manual",
+      "name": "RTI replies (manually verified by editors)",
+      "authority": "Various — Central/Divisional Railway PIOs",
+      "url": "https://rtionline.gov.in/",
+      "category": "rti",
+      "source_type": "RTI_REPLY",
+      "priority": 1,
+      "update_frequency": "manual",
+      "fetch_strategy": "manual_only",
+      "is_active": true,
+      "notes": "RTI replies arrive as scanned documents/emails and cannot be scraped. Editors upload directly through the admin app; this registry entry exists so RTI-sourced rows still cite a `sources` record."
+    }
+  ]
+}

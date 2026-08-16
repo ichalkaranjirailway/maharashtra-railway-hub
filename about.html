@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="footerAbout">About — Maharashtra Railway Information Hub</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main class="container section" style="padding-top:32px; max-width:760px">
+  <h1 id="about" data-i18n="footerAbout"></h1>
+  <p>
+    The Maharashtra Railway Information Hub tracks railway projects, services and
+    official developments across Maharashtra, with a permanently featured tracker
+    for the Hatkanangale–Ichalkaranji railway connectivity project. It is built to
+    be a long-term, evidence-based public archive rather than a news feed or a
+    campaign site.
+  </p>
+
+  <div class="railline" aria-hidden="true"></div>
+
+  <h2 id="methodology" data-i18n="footerMethodology"></h2>
+  <p>
+    Every project record carries a status history rather than a single current
+    value, so figures such as cost or sanction status can be traced over time
+    instead of being silently overwritten. Every update and status change is
+    expected to carry a source and a verification level:
+  </p>
+  <ul>
+    <li>🟢 Verified — confirmed against an official source</li>
+    <li>🟡 Under verification — reported, confirmation in progress</li>
+    <li>🔵 Historical / archived — no longer current, kept for the record</li>
+    <li>⚪ Source-based report — attributed to media or a public source, not yet independently confirmed</li>
+    <li>🔴 Unverified — never published as fact</li>
+  </ul>
+  <p>Nothing in this build is presented to the public as a 🔴 unverified fact.</p>
+
+  <h2 id="sources" data-i18n="footerSources"></h2>
+  <p>
+    Primary sources (Ministry of Railways, Railway Board, Central Railway,
+    Government of Maharashtra, official tender/procurement notices) are
+    prioritized over media reporting, which is in turn prioritized over public
+    submissions. Media-derived items are always labelled as media reporting;
+    publicly submitted items go through a quarantine → review → verification →
+    publish workflow before appearing on the live site (see README.md for the
+    intended pipeline).
+  </p>
+
+  <h2>Demo data notice</h2>
+  <p>
+    This deployment currently runs on placeholder demo data so the interface can
+    be reviewed end to end. No project cost, status, date, or RTI detail shown
+    here should be treated as fact. See <code>data/data.js</code> — every demo
+    record is marked <code>isDemo: true</code>.
+  </p>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="data/data.js"></script>
+<script src="data/i18n.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  MRIH.renderHeader("");
+  MRIH.renderFooter();
+  MRIH_I18N.renderI18n();
+</script>
+</body>
+</html>

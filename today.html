@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="todayIn">Today in Maharashtra Railways</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main class="container section" style="padding-top:32px">
+  <h1 data-i18n="todayIn"></h1>
+  <h2 id="todayDateHeading" class="mono" style="color:var(--slate);font-weight:500"></h2>
+  <div class="railline" aria-hidden="true"></div>
+  <div class="card" id="todayContent"></div>
+  <p class="small">
+    Tip: append <code>?date=YYYY-MM-DD</code> to this page's URL to view any past date, e.g.
+    <a href="today.html?date=2026-08-10">today.html?date=2026-08-10</a>.
+  </p>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="data/data.js"></script>
+<script src="data/i18n.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  MRIH.renderHeader("today");
+  MRIH.renderFooter();
+  MRIH.renderTodayPage();
+  MRIH_I18N.renderI18n();
+</script>
+</body>
+</html>

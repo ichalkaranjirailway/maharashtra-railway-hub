@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="mr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="navProjects">Projects — Maharashtra Railway Information Hub</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<div id="site-header"></div>
+
+<main class="container section" style="padding-top:32px">
+  <h1 data-i18n="navProjects"></h1>
+  <div class="railline" aria-hidden="true"></div>
+
+  <div class="filterbar card" id="filterBar">
+    <input type="search" data-filter="q" data-i18n-placeholder="searchPlaceholder" placeholder="Search…" style="flex:1;min-width:200px">
+    <select data-filter="status" aria-label="Status"></select>
+    <select data-filter="category" aria-label="Category"></select>
+    <select data-filter="district" aria-label="District"></select>
+  </div>
+
+  <div class="card" id="projectList" style="margin-top:16px"></div>
+</main>
+
+<div id="site-footer"></div>
+
+<script src="data/data.js"></script>
+<script src="data/i18n.js"></script>
+<script src="assets/app.js"></script>
+<script>
+  MRIH.renderHeader("projects");
+  MRIH.renderFooter();
+  MRIH_I18N.renderI18n();
+
+  const params = new URLSearchParams(location.search);
+  const initialQ = params.get("q") || "";
+  document.querySelector('[data-filter="q"]').value = initialQ;
+
+  MRIH.wireFilters((state) => {
+    window.__mrihRerenderList = () => MRIH.renderProjectList("projectList", { state });
+    MRIH.renderProjectList("projectList", { state });
+  });
+</script>
+</body>
+</html>
