@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://example.org/index.html</loc><priority>1.0</priority></url>
-  <url><loc>https://example.org/projects.html</loc><priority>0.9</priority></url>
-  <url><loc>https://example.org/hatkanangale-ichalkaranji.html</loc><priority>0.9</priority></url>
-  <url><loc>https://example.org/today.html</loc><priority>0.6</priority></url>
-  <url><loc>https://example.org/about.html</loc><priority>0.4</priority></url>
-  <url><loc>https://example.org/project.html?id=htk-ich</loc><priority>0.8</priority></url>
-  <url><loc>https://example.org/project.html?id=pune-nashik-hsr</loc><priority>0.6</priority></url>
-  <url><loc>https://example.org/project.html?id=solapur-tuljapur-usmanabad</loc><priority>0.6</priority></url>
-  <url><loc>https://example.org/project.html?id=cstm-redevelopment</loc><priority>0.6</priority></url>
-  <url><loc>https://example.org/project.html?id=kolhapur-vaibhavwadi</loc><priority>0.6</priority></url>
+  <url><loc>https://ichalkaranjirailway.github.io/maharashtra-railway-hub/index.html</loc><priority>1.0</priority></url>
+  <url><loc>https://ichalkaranjirailway.github.io/maharashtra-railway-hub/projects.html</loc><priority>0.9</priority></url>
+  <url><loc>https://ichalkaranjirailway.github.io/maharashtra-railway-hub/hatkanangale-ichalkaranji.html</loc><priority>0.9</priority></url>
+  <url><loc>https://ichalkaranjirailway.github.io/maharashtra-railway-hub/today.html</loc><priority>0.6</priority></url>
+  <url><loc>https://ichalkaranjirailway.github.io/maharashtra-railway-hub/about.html</loc><priority>0.4</priority></url>
+  <url><loc>https://ichalkaranjirailway.github.io/maharashtra-railway-hub/project.html?id=htk-ich</loc><priority>0.8</priority></url>
+  <url><loc>https://ichalkaranjirailway.github.io/maharashtra-railway-hub/project.html?id=pune-nashik-hsr</loc><priority>0.6</priority></url>
+  <url><loc>https://ichalkaranjirailway.github.io/maharashtra-railway-hub/project.html?id=solapur-tuljapur-usmanabad</loc><priority>0.6</priority></url>
+  <url><loc>https://ichalkaranjirailway.github.io/maharashtra-railway-hub/project.html?id=cstm-redevelopment</loc><priority>0.6</priority></url>
+  <url><loc>https://ichalkaranjirailway.github.io/maharashtra-railway-hub/project.html?id=kolhapur-vaibhavwadi</loc><priority>0.6</priority></url>
 </urlset>
 <!--
   NOTE: query-string URLs (?id=...) are not ideal for SEO. Once you move to

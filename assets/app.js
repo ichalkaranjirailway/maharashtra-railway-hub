@@ -398,6 +398,7 @@
     renderFeatured();
     if (window.__mrihRerenderList) window.__mrihRerenderList();
     renderProjectDetail();
+    renderTracker("htk-ich"); // no-op on pages without #trackerRoot
     renderTodayPage();
   });
 })();
