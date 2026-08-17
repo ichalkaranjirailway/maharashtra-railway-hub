@@ -111,6 +111,7 @@ function setLang(lang) {
   localStorage.setItem("mrih_lang", lang);
   document.documentElement.lang = lang === "mr" ? "mr" : "en";
   renderI18n();
+  window.dispatchEvent(new CustomEvent("mrih:langchange"));
 }
 function t(key) {
   const lang = getLang();
@@ -127,6 +128,6 @@ function renderI18n() {
     btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === getLang());
   });
   document.documentElement.lang = getLang() === "mr" ? "mr" : "en";
-  window.dispatchEvent(new CustomEvent("mrih:langchange"));
+  
 }
 window.MRIH_I18N = { getLang, setLang, t, renderI18n };
